@@ -1,17 +1,18 @@
 const express = require('express')
+
 const app = express();
-const path=require("path")
+const userRoutes = require('./routes/users.js')
+
+const port = 3000;
 
 
-app.get('/', (req, res)=>{
-    const pathuse=path.join(__dirname,"public/index.html")
-    res.sendFile(pathuse)
-    
+app.use('/users', userRoutes);
+
+app.get('/',(req, res)=>{
+    res.send('hello')
 })
-app.post('/auth',(req, res)=>{
-    res.send(data)
+
+
+app.listen(port, ()=>{
+    console.log('the server running in',port)
 })
-app.listen(3000,()=>{
-    console.log('app listening in the port 3000');
-    
-});
