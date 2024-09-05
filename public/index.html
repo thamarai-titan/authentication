@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Authentication</title>
+  </head>
+  <body>
+    <div class="container">
+      <label for="username">Give the User Name :</label>
+      <input type="text" placeholder="username" id="username" />
+      <label for="password">Enter the password</label>
+      <input type="password" placeholder="password" id="pass" />
+      <button onclick="" class="btn">Submit</button>
+    </div>
+    <div class="wel-mesg">
+      <h2 id="welcome-mesg"></h2>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+    <script>
+      const username = document.getElementById("username").value;
+      const password = document.getElementById("pass").value;
+      const click = document.getElementsByClassName("btn");
+
+      async function sendAuth() {
+        const data = { username, password };
+        console.log(data);
+
+        await axios.post("http//localhost:3000/auth", { data });
+      }
+    </script>
+  </body>
+</html>
