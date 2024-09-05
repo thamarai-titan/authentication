@@ -5,7 +5,7 @@ const userRoutes = require('./routes/users.js')
 
 const port = 3000;
 
-
+app.use(express.json())
 app.use('/users', userRoutes);
 
 app.get('/',(req, res)=>{
