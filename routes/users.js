@@ -11,9 +11,8 @@ router.post("/", (req, res) => {
   const user = req.body;
   users.push({ ...user, id: uuidv4() });
 
-  res.send("the data was added");
+  res.send(`${firstName} was added successfully`);
 });
-
 router.get("/:id", (req, res) => {
   const { id } = req.params;
 
@@ -25,7 +24,6 @@ router.get("/:id", (req, res) => {
 router.delete("/:id", (req, res) => {
   const { id } = req.params;
   users = users.filter((user) => user.id !== id);
-
 
   res.send(`${id} deleted successfully`);
 });
